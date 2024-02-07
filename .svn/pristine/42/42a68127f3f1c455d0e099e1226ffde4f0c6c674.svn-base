@@ -1,0 +1,26 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+
+namespace ems.pmr.Models
+{
+    public class MdlPmrTrnPurchaseRequisition : result
+    {
+        public List<request_list> purchaserequest_list { get; set; }
+    }
+
+    public class request_list : result
+    {
+        public string purchaserequisition_gid { get; set; }
+        public string purchaserequisition_date { get; set; }
+        public string costcenter_name { get; set; }
+        public string purchaserequisition_referencenumber { get; set; }
+        public string user_firstname { get; set; }
+        public string purchaserequisition_remarks { get; set; }
+        public string overall_status { get; set; }
+        public string branch_name { get; set; }
+    }
+
+    }
+

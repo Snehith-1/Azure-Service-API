@@ -1,0 +1,34 @@
+﻿using ems.pmr.DataAccess;
+using ems.utilities.Functions;
+using ems.utilities.Models;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Net.Http;
+using System.Net;
+using System.Web;
+using System.Web.Http;
+using ems.pmr.Models;
+
+namespace ems.pmr.Controllers
+{
+    [RoutePrefix("api/PmrTrnPurchaseRequisition")]
+    [Authorize]
+    public class PmrTrnPurchaseRequisitionController : ApiController
+    {
+        session_values Objgetgid = new session_values();
+        logintoken getsessionvalues = new logintoken();
+        DaPmrTrnPurchaseRequisition objDapurchase = new DaPmrTrnPurchaseRequisition();
+
+        // Purchase requisition Summary
+
+        [ActionName("GetPmrTrnPurchaseRequisition")]
+        [HttpGet]
+        public HttpResponseMessage GetPmrTrnPurchaseRequisition()
+        {
+            MdlPmrTrnPurchaseRequisition values = new MdlPmrTrnPurchaseRequisition();
+            objDapurchase.DaGetPmrTrnPurchaseRequisition(values);
+            return Request.CreateResponse(HttpStatusCode.OK, values);
+        }
+    }
+}

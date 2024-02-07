@@ -1,0 +1,15 @@
+.bg-border{
+    background-color: rgb(25, 167, 206);
+}
+.btn-info{
+    background-color: #e85181 !important;
+    color: #fff !important;
+    font-size: 1.1rem !important;
+    font-weight: 630 !important;
+    padding: calc(0.775rem + 1px) calc(1.5rem + 1px) !important;
+    border-radius: 3px ;
+    border: 0;
+    }
+.btn-info:hover {
+        background-color: #db2e79 !important;
+      }

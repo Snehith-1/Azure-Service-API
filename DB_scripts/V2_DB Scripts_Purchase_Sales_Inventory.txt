@@ -1,0 +1,87 @@
+Tmodule Scripts for Sales:
+update adm_mst_tmodule set lw_flag='N' where module_gid like 'SMR%';
+update adm_mst_tmodule set lw_flag='Y',sref='/smr/SmrDashboard' where module_gid='SMR';
+update adm_mst_tmodule set lw_flag='Y',sref='/smr/SmrTrnCustomerSummary' where module_gid='SMRCMTCUS';
+update adm_mst_tmodule set lw_flag='Y',sref='/einvoice/Invoice-Summary' where module_gid='SMRINMINV';
+update adm_mst_tmodule set lw_flag='Y',sref='/smr/SmrMstCurrencySummary' where module_gid='SMRMSTCUR';
+update adm_mst_tmodule set lw_flag='Y',sref='/smr/SmrMstTaxsummary' where module_gid='SMRMSTTAX';
+update adm_mst_tmodule set lw_flag='Y',sref='/smr/SmrRptSalesorderReport' where module_gid='SMRORT';
+update adm_mst_tmodule set lw_flag='Y',sref='/smr/SmrRptOrderreport' where module_gid='SMRORTORT';
+update adm_mst_tmodule set lw_flag='Y',sref='/smr/SmrRptTodaySalesreport' where module_gid='SMRORTOVE';
+update adm_mst_tmodule set lw_flag='Y',sref='/smr/SmrRptSalesreport' where module_gid='SMRORTSSR';
+update adm_mst_tmodule set lw_flag='Y',sref='/smr/SmrMstProductGroup' where module_gid='SMRPDMPDG';
+update adm_mst_tmodule set lw_flag='Y',sref='/smr/SmrMstProductSummary' where module_gid='SMRPDMPDT';
+update adm_mst_tmodule set lw_flag='Y',sref='/smr/SmrMstProductunitsSummary' where module_gid='SMRPDMPOU';
+update adm_mst_tmodule set lw_flag='Y',sref='/einvoice/ProformaInvoice' where module_gid='SMRPROINV';
+update adm_mst_tmodule set lw_flag='Y',sref='/einvoice/ReceiptSummary' where module_gid='SMRRCP';
+update adm_mst_tmodule set lw_flag='Y',sref='/einvoice/ReceiptSummary' where module_gid='SMRRCT';
+update adm_mst_tmodule set lw_flag='Y',sref='/smr/SmrTrnCustomerenquirySummary' where module_gid='SMRSMRENS';
+update adm_mst_tmodule set lw_flag='Y',sref='/smr/SmrRptQuotationreport' where module_gid='SMRSMRQAP';
+update adm_mst_tmodule set lw_flag='Y',sref='/smr/SmrTrnQuotationSummary' where module_gid='SMRSMRQUO';
+update adm_mst_tmodule set lw_flag='Y',sref='/smr/SmrTrnSalesManagerSummary' where module_gid='SMRSMRSMM';
+update adm_mst_tmodule set lw_flag='Y',sref='/smr/SmrMstSalesteamSummary' where module_gid='SMRSMRSTM';
+update adm_mst_tmodule set lw_flag='Y',sref='/smr/SmrTrnSalesorderSummary' where module_gid='SMRSROSRO';
+UPDATE `adm_mst_tmodule` SET `lw_flag` = 'Y' WHERE (`module_gid` = 'SMRMST');
+UPDATE `adm_mst_tmodule` SET `lw_flag` = 'Y' WHERE (`module_gid` = 'SMRINM');
+UPDATE `adm_mst_tmodule` SET `lw_flag` = 'Y' WHERE (`module_gid` = 'SMRCMT');
+UPDATE `adm_mst_tmodule` SET `lw_flag` = 'Y' WHERE (`module_gid` = 'SMRPDM');
+UPDATE `adm_mst_tmodule` SET `lw_flag` = 'Y' WHERE (`module_gid` = 'SMRSMR');
+UPDATE `adm_mst_tmodule` SET `lw_flag` = 'Y' WHERE (`module_gid` = 'SMRSMRMYE');
+UPDATE `adm_mst_tmodule` SET `lw_flag` = 'N' WHERE (`module_gid` = 'SMRSMRQAP');
+
+Tmodule Scripts for Purchase:
+update adm_mst_tmodule set lw_flag='N' where module_gid like 'PMR%';
+update adm_mst_tmodule set lw_flag='Y',sref='/pmr/PmrDashboard' where module_gid='PMR';
+update adm_mst_tmodule set lw_flag='Y',sref='/payable/PmrTrnInvoice' where module_gid='PMRINETRNIN';
+update adm_mst_tmodule set lw_flag='Y',sref='/pmr/PmrMstCurrencySummary' where module_gid='PMRMSTCUR';
+update adm_mst_tmodule set lw_flag='Y',sref='/pmr/PmrMstTaxSummary' where module_gid='PMRMSTTAX';
+update adm_mst_tmodule set lw_flag='Y',sref='/pmr/PmrMstTermsconditionssummary' where module_gid='PMRMSTTMC';
+update adm_mst_tmodule set lw_flag='Y',sref='/payable/PblTrnPaymentsummary' where module_gid='PMRPAYTRNPA';
+update adm_mst_tmodule set lw_flag='Y',sref='/pmr/PmrMstProductSummary' where module_gid='PMRPRMPDT';
+update adm_mst_tmodule set lw_flag='Y',sref='/pmr/PmrMstProductGroup' where module_gid='PMRPRMPTG';
+update adm_mst_tmodule set lw_flag='Y',sref='/pmr/PmrMstProductunit' where module_gid='PMRPRMUOM';
+update adm_mst_tmodule set lw_flag='Y',sref='/pmr/PmrTrnRaiseEnquiry' where module_gid='PMRPRVEQ';
+update adm_mst_tmodule set lw_flag='Y',sref='/pmr/PmrRptPurchaseorderdetailedreport' where module_gid='PMRRPTPOR';
+update adm_mst_tmodule set lw_flag='Y',sref='' where module_gid='PMRTRN';
+update adm_mst_tmodule set lw_flag='Y',sref='/pmr/PmrTrnPurchaseorderSummary' where module_gid='PMRTRNPRO';
+update adm_mst_tmodule set lw_flag='Y',sref='/pmr/PmrMstVendorregister' where module_gid='PMRVENRVD';
+UPDATE `adm_mst_tmodule` SET `lw_flag` = 'Y' WHERE (`module_gid` = 'PMRMST');
+UPDATE `adm_mst_tmodule` SET `lw_flag` = 'Y' WHERE (`module_gid` = 'PMRPAY');
+UPDATE `adm_mst_tmodule` SET `lw_flag` = 'Y' WHERE (`module_gid` = 'PMRPRM');
+UPDATE `adm_mst_tmodule` SET `lw_flag` = 'Y' WHERE (`module_gid` = 'PMRPRO');
+UPDATE `adm_mst_tmodule` SET `lw_flag` = 'Y' WHERE (`module_gid` = 'PMRRPT');
+UPDATE `adm_mst_tmodule` SET `lw_flag` = 'Y' WHERE (`module_gid` = 'PMRVEN');
+UPDATE `adm_mst_tmodule` SET `lw_flag` = 'Y' WHERE (`module_gid` = 'PMRINV');
+UPDATE `adm_mst_tmodule` SET `module_name` = 'Invoice', `breadcrumb_name` = 'Invoice' WHERE (`module_gid` = 'PMRINV');
+UPDATE `adm_mst_tmodule` SET `sref` = '/pmr/PmrMstVendorregister' WHERE (`module_gid` = 'PMRVEN');
+UPDATE `adm_mst_tmodule` SET `sref` = '' WHERE (`module_gid` = 'PMRVEN');
+UPDATE `adm_mst_tmodule` SET `lw_flag` = 'Y' WHERE (`module_gid` = 'PMRVEN');
+UPDATE `adm_mst_tmodule` SET `module_gid_parent` = 'PMRTRN' WHERE (`module_gid` = 'PMRPRVEQ');
+UPDATE `adm_mst_tmodule` SET `lw_flag` = 'N' WHERE (`module_gid` = 'PMRPRO');
+
+
+
+
+
+Tmodule Scripts for Inventory:
+update adm_mst_tmodule set lw_flag='N' where module_gid like 'IMS%';
+update adm_mst_tmodule set lw_flag='Y',sref='/ims/ImsTrnDeliveryorder' where module_gid='IMSDEL';
+update adm_mst_tmodule set lw_flag='Y',sref='ims/ImsTrnDeliveryOrderAcknowlegement' where module_gid='IMSDELACK';
+update adm_mst_tmodule set lw_flag='Y',sref='/ims/ImsTrnDeliveryorder' where module_gid='IMSDELDEL';
+update adm_mst_tmodule set lw_flag='Y',sref='/ims/ImsTrnOpendcsummary' where module_gid='IMSDELODC';
+update adm_mst_tmodule set lw_flag='Y',sref='/ims/ImsTrnOpeningstockSummary' where module_gid='IMSSTKOPS';
+update adm_mst_tmodule set lw_flag='Y',sref=' /pmr/PmrTrnGrncheckerSummary' where module_gid='IMSTRNGCK';
+update adm_mst_tmodule set lw_flag='Y',sref='/pmr/PmrTrnGrninward' where module_gid='IMSTRNGIW';
+update adm_mst_tmodule set lw_flag='Y',sref='/ims/ImsTrnIssuematerialSummary' where module_gid='IMSTRNISM';
+
+
+/*---------------------------------------------- (Poornima) 29-12-2023--------------------------------------------------------------------*/
+
+insert into adm_mst_tsequence (sequence_gid, sequence_code, sequence_name, sequence_format, sequence_curval, sequence_flag, branch_flag, department_flag, year_flag, month_flag, location_flag, company_code, delimeter, runningno_prefix, finyear, carry_forward, created_by, created_date, updated_by, updated_date) values
+('SSQM2312291101', 'BEAC', 'Email Attachments', '4', '7', 'N', 'N', 'N', 'N', '', 'N', '', '', '', '2023', 'N', NULL, NULL, NULL, NULL);
+insert into adm_mst_tsequence (sequence_gid, sequence_code, sequence_name, sequence_format, sequence_curval, sequence_flag, branch_flag, department_flag, year_flag, month_flag, location_flag, company_code, delimeter, runningno_prefix, finyear, carry_forward, created_by, created_date, updated_by, updated_date) values
+('SSQM2312291102', 'BELP', 'Emails', '4', '7', 'N', 'N', 'N', 'N', '', 'N', '', '', '', '2023', 'N', NULL, NULL, NULL, NULL); 
+
+UPDATE `adm_mst_tmodule` SET `sref` = '/pmr/PmrDashboard' WHERE (`module_gid` = 'PMR');
+/*--------------------------------------End:(Poornima) ------------------------------------------------------*/
+

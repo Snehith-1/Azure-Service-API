@@ -1,0 +1,67 @@
+﻿using ems.pmr.Models;
+using ems.utilities.Functions;
+using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Linq;
+using System.Web;
+
+namespace ems.pmr.DataAccess
+{
+    public class DaPmrTrnPurchaseRequisition
+    {
+        dbconn objdbconn = new dbconn();
+        cmnfunctions objcmnfunctions = new cmnfunctions();
+        HttpPostedFile httpPostedFile;
+        string msSQL = string.Empty;
+        string hierarchy_flag;
+        DataTable mail_datatable, dt_datatable;
+        // Purchase Requisition Summary
+
+        public void DaGetPmrTrnPurchaseRequisition (MdlPmrTrnPurchaseRequisition values)
+        {
+            msSQL = " select distinct a.purchaserequisition_gid, " +
+                " a.purchaserequisition_date,a.materialrequisition_gid," +
+                " a.purchaserequisition_flag,replace(a.purchaserequisition_remarks,'PI','PR') as purchaserequisition_remarks, " +
+                " CASE when a.grn_flag <> 'GRN Pending' then a.grn_flag " +
+                " when a.purchaseorder_flag <> 'PO Pending' then a.purchaseorder_flag " +
+                " when a.purchaserequisition_flag='PR Pending Approval' then 'PR Pending Approval' " +
+                " when a.purchaserequisition_flag='PR Approved' then 'PR Approved' " +
+                " when a.purchaserequisition_flag='PR Rejected' then 'PR Rejected' " +
+                " else a.purchaserequisition_flag end as 'overall_status', " +
+                " b.user_firstname,d.department_name,concat(e.branch_name,'/',d.department_name) as branch_name,replace(a.purchaserequisition_referencenumber,'PI','PR') as purchaserequisition_referencenumber,g.costcenter_name " +
+                " from pmr_trn_tpurchaserequisition a " +
+                " left join adm_mst_tuser b on a.created_by = b.user_gid " +
+                " left join hrm_mst_temployee c on c.user_gid = b.user_gid " +
+                " left join hrm_mst_tdepartment d on c.department_gid = d.department_gid " +
+                " left join hrm_mst_tbranch e on a.branch_gid = e.branch_gid " +
+                " left join adm_mst_tmodule2employee  f on f.employee_gid = c.employee_gid " +
+                " left join pmr_mst_tcostcenter g on a.costcenter_gid=g.costcenter_gid " +
+                " where 0=0 Order by date(a.purchaserequisition_date) desc,a.purchaserequisition_date asc, a.purchaserequisition_gid desc ";
+                dt_datatable = objdbconn.GetDataTable(msSQL);
+            var getModuleList = new List<request_list>();
+            if (dt_datatable.Rows.Count != 0)
+            {
+                foreach (DataRow dt in dt_datatable.Rows)
+                {
+                    getModuleList.Add(new request_list
+                    {
+                        purchaserequisition_gid = dt["purchaserequisition_gid"].ToString(),
+                        purchaserequisition_date = dt["purchaserequisition_date"].ToString(),
+                        costcenter_name = dt["costcenter_name"].ToString(),
+                        purchaserequisition_referencenumber = dt["purchaserequisition_referencenumber"].ToString(),
+                        user_firstname = dt["user_firstname"].ToString(),
+                        purchaserequisition_remarks = dt["purchaserequisition_remarks"].ToString(),
+                        overall_status = dt["overall_status"].ToString(),
+                        branch_name = dt["branch_name"].ToString()
+
+
+
+                    });
+                    values.purchaserequest_list = getModuleList;
+                }
+            }
+            dt_datatable.Dispose();
+        }
+    }
+}
